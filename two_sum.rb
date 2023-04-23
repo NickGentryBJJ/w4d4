@@ -48,11 +48,10 @@ end
 
 def two_sum?(arr, target)
     hash = Hash.new(false)
+    
     arr.each do |ele|
+        return true if hash.has_key?(target - ele)
         hash[ele] = true 
-        if hash.has_key?(target - ele)
-            return true 
-        end
     end
     false
 end
